@@ -2861,15 +2861,15 @@ SUB __UI_EventDispatcher
                                 SELECT CASE Control(i).Type
                                     CASE __UI_Type_Button
                                         IF Control(i).CanHaveFocus THEN __UI_Focus = Control(i).ID
-                                        __UI_Click Control(i).ID
+                                        __UI_Click (Control(i).ID)
                                     CASE __UI_Type_RadioButton
                                         IF Control(i).CanHaveFocus THEN __UI_Focus = Control(i).ID
                                         SetRadioButtonValue Control(i).ID
-                                        __UI_Click Control(i).ID
+                                        __UI_Click (Control(i).ID)
                                     CASE __UI_Type_CheckBox
                                         IF Control(i).CanHaveFocus THEN __UI_Focus = Control(i).ID
                                         Control(i).Value = NOT Control(i).Value
-                                        __UI_Click Control(i).ID
+                                        __UI_Click (Control(i).ID)
                                     CASE __UI_Type_Frame
                                         'Find the first children in this frame that can have focus
                                         FOR j = i + 1 TO UBOUND(Control)
